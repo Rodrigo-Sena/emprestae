@@ -1,0 +1,33 @@
+<form action="/to-borrow/create" method="POST">
+
+    <select id="toBorrowCategory" name="category">
+        <option value="ferramentas">Ferramentas</option>
+        <option value="livros">Livros</option>
+        <option value="jogos">Jogos</option>
+    </select>
+
+  <label for="toBorrowName">
+    Nome
+    <input type="text" id="toBorrowName" name="name" />
+  </label>
+
+  <label for="toBorrowDescription">
+    Descrição
+    <input type="text" id="toBorrowDescription" name="description" />
+  </label>
+
+  <label for="toBorrowLocation">
+    Localização
+    <input type="text" id="toBorrowLocation" name="location" />
+  </label>
+
+  {{!-- <label for="toBorrowPhoto">
+    Escolha a foto
+    <input type="file" id="toBorrowPhoto" name="photo" />
+  </label> --}}
+
+  <button type="submit">
+    Salvar
+  </button>
+</form>
+
