@@ -16,9 +16,6 @@ const toBorrowSchema = new Schema(
     description: {
       type: String,
     },
-    location: {
-      type: String,
-    },
     photo: {
         type: String,
       },
@@ -27,6 +24,10 @@ const toBorrowSchema = new Schema(
     },
     available: {
       type: String,
+    },
+    owner: {
+      type: Schema.Types.ObjectId,
+      ref: 'User'
     }
 
   },
