@@ -19,7 +19,6 @@ router.post('/to-borrow/create', async (req, res, next) => {
 });
 
 //Update
-
 router.get('/to-borrow/:id/update', async(req, res, next) => {
     const { id } = req.params
 
@@ -32,33 +31,30 @@ router.get('/to-borrow/:id/update', async(req, res, next) => {
       }
    });
 
-
 router.post('/to-borrow/:id/update', async (req, res, next) => {
     const { id } = req.params
     const data = req.body
 
     try {
       const result = await toBorrow.updateOne({_id: id}, {$set: data})
-      console.log('AQUI!!!!!!!!!');
-      res.redirect('/list')
+      console.log('AQUI!!!!!!!!!!');
+      res.redirect('profile')
     } catch (error) {
       console.log(error)
     }
    });
 
-// Renderiza na pagina resultado
 
+    // Renderiza na pagina resultado
 router.get('/list', async (req, res, next) => {
-    try {
-     const result = await toBorrow.find()
-    //  console.log(result)
-     res.render('toBorrow-list', { toBorrowList: result }) //, {toBorrowList: result}
-   } catch (error) {
-     console.log(error)
-   }
+  try {
+   const result = await toBorrow.find()
+  //  console.log(result)
+   res.render('toBorrow-list', { toBorrowList: result })
+ } catch (error) {
+   console.log(error)
+ }
 });
-
-
 
 module.exports = router;
 
