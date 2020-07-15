@@ -1,6 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const toBorrow = require ('../models/ToBorrow.model')
+const User = require('../models/User.model')
 
 
 //######################## CREATE ########################
@@ -59,6 +60,20 @@ router.get('/list', async (req, res, next) => {
    console.log(error)
  }
 });
+
+router.get('/details/:id', async (req, res, next) => {
+  const { id } = req.params;
+ 
+  try {
+    const result = await toBorrow.findById({_id: id })
+    console.log(result)
+    res.render('objectDetails', {detailsResult: result})
+  } catch (error) {
+    console.log(error)
+  }
+
+
+})
 
 //######################## DELETE ########################
 

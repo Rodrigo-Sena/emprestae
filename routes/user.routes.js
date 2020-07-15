@@ -128,8 +128,10 @@ router.post('/logout', (req, res) => {
 router.get('/profile', async (req, res, next) => { 
     
     try {
-        if (req.session.currentUser) {   
-            const result = await toBorrow.find().populate('owner').exec()
+        if (req.session.currentUser) {  
+          const ownerId = req.session.currentUser._id 
+            const result = await toBorrow.find({'owner': ownerId}).populate('owner').exec()
+            console.log(result)
         res.render('profile', { toBorrowList: result })
           } else {
               res.redirect('/login')
