@@ -5,7 +5,12 @@
 <h2>{{name}}</h2>
 <p><strong>Descrição:</strong>{{description}}</p>
 <p><strong>Localização:</strong> {{location}} </p>
-{{!-- <a href="/to-borrow/{{_id}}/update">Editar</a>
-<a href="/to-borrow/{{_id}}/delete">Delete</a> --}}
-<a href="/">Visualizar</a>
+
+<form action="/details/{{_id}}" method="GET">
+ <button type="submit">Visualizar</button>
+</form>
+
+
+
+{{!-- <a href="/details/{{_id}}">Visualizar</a> --}}
 {{/each}}
