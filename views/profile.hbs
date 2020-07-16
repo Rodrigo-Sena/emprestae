@@ -3,7 +3,9 @@
 {{#each toBorrowList}}
 <h2>{{name}}</h2>
 <p><strong>Descrição:</strong>{{description}}</p>
-<p><strong>Localização:</strong> {{location}} </p>
+<p><strong>Localização:</strong> {{owner.neighbourhood}} </p>
 <a href="/to-borrow/{{_id}}/update">Editar</a>
 <a href="/to-borrow/{{_id}}/delete">Delete</a>
 {{/each}}
+
+<a href="/list">Return</a>

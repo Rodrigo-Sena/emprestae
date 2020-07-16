@@ -8,9 +8,6 @@ const toBorrow = require ('../models/ToBorrow.model');
 
 
 
-//
-
-
 ////////////////////////////////////////////////////////////////////////
 ///////////////////////////// SIGNUP //////////////////////////////////
 ////////////////////////////////////////////////////////////////////////
@@ -129,9 +126,9 @@ router.get('/profile', async (req, res, next) => {
     
     try {
         if (req.session.currentUser) {  
-          const ownerId = req.session.currentUser._id 
+            const ownerId = req.session.currentUser._id
             const result = await toBorrow.find({'owner': ownerId}).populate('owner').exec()
-            console.log(result)
+            console.log(`${result} <<<<<<<<<<<<<<<<<<<<<  RESULT `)
         res.render('profile', { toBorrowList: result })
           } else {
               res.redirect('/login')
