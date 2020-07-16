@@ -1,7 +1,8 @@
 const express = require('express');
 const router = express.Router();
 const toBorrow = require ('../models/ToBorrow.model')
-const User = require('../models/User.model')
+const User = require('../models/User.model');
+const { Router } = require('express');
 
 
 //######################## CREATE ########################
@@ -10,7 +11,8 @@ router.get('/to-borrow', (req, res, next) => res.render('toBorrow-create'));
 
 router.post('/to-borrow/create', async (req, res, next) => {
     const data = req.body;
-    data.owner = req.session.currentUser._id;
+    data.owner = req.session.currentUser;
+    // console.log(`${data.owner} MMMMMMMMMMMMMMMMMMMMM`)
 
     try {
         const result = await toBorrow.create(data);
@@ -53,8 +55,8 @@ router.post('/to-borrow/:id/update', async (req, res, next) => {
 
 router.get('/list', async (req, res, next) => {
   try {
-   const result = await toBorrow.find()
-  //  console.log(result)
+   const result = await toBorrow.find().populate('owner').exec()
+   console.log(result)
    res.render('toBorrow-list', { toBorrowList: result })
  } catch (error) {
    console.log(error)
@@ -65,7 +67,7 @@ router.get('/details/:id', async (req, res, next) => {
   const { id } = req.params;
  
   try {
-    const result = await toBorrow.findById({_id: id })
+    const result = await toBorrow.findById({_id: id }).populate('owner').exec()
     console.log(result)
     res.render('objectDetails', {detailsResult: result})
   } catch (error) {
@@ -90,6 +92,22 @@ router.get("/to-borrow/:id/delete", async (req, res, next) => {
   }
 
 });
+
+// router home
+router.get("/home", (req, res, next) => res.render('home')) 
+
+// router search
+router.get("/searchResult", async (req, res, next) => {
+  try {
+    const search = req.query.searchInput;
+    const result = await toBorrow.find({'name': search}).populate('owner').exec()
+    res.render('searchResult', { result });
+  } catch (error) {
+    console.log(error);
+  }
+}) 
+
+
 
 
 module.exports = router;
