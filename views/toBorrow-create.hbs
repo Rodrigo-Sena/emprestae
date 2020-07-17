@@ -1,32 +1,20 @@
 <form action="/to-borrow/create" method="POST">
 
-    <select id="toBorrowCategory" name="category">
+<h3 class="col-md-5 mt-5 mb-5 offset-md-4">Cadastro de Obj Create</h3>
+
+    <select class="form-control col-md-5 mb-5 offset-md-3" id="toBorrowCategory" name="category">
         <option value="ferramentas">Ferramentas</option>
         <option value="livros">Livros</option>
         <option value="jogos">Jogos</option>
     </select>
 
-  <label for="toBorrowName">
-    Nome
-    <input type="text" id="toBorrowName" name="name" />
-  </label>
-
-  <label for="toBorrowDescription">
-    Descrição
-    <input type="text" id="toBorrowDescription" name="description" />
-  </label>
-
-  <label for="toBorrowLocation">
-    Localização
-    <input type="text" id="toBorrowLocation" name="location" />
-  </label>
-
-  {{!-- <label for="toBorrowPhoto">
-    Escolha a foto
-    <input type="file" id="toBorrowPhoto" name="photo" />
-  </label> --}}
-
-  <button type="submit">
+  <div class="col-md-5 mb-5 offset-md-3">
+    <input type="text" class="form-control" id="toBorrowName" name="name" placeholder="Nome"/>
+  </div>
+  <div class="col-md-5 mb-5 offset-md-3">
+    <input type="text" class="form-control" id="toBorrowDescription" name="description" placeholder="Descrição" />
+  </div>
+  <button type="submit" class="btn btn-primary col-md-3 offset-md-4">
     Salvar
   </button>
 </form>
