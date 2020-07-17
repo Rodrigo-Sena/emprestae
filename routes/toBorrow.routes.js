@@ -74,8 +74,6 @@ router.get('/details/:id', async (req, res, next) => {
   } catch (error) {
     console.log(error)
   }
-
-
 })
 
 //######################## DELETE ########################

@@ -7,23 +7,28 @@ const toBorrowSchema = new Schema(
   {
     category: {
       type: String,
-      required: true
+      required: true,
+      trim: true
     },
     name: {
       type: String,
-      required: true
+      required: true,
+      trim: true
     },
     description: {
       type: String,
+      trim: true
     },
     photo: {
         type: String,
       },
     loanCondition: {
       type: String,
+      trim: true
     },
     available: {
       type: String,
+      trim: true
     },
     owner: {
       type: Schema.Types.ObjectId,
