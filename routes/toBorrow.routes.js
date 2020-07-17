@@ -107,8 +107,5 @@ router.get("/searchResult", async (req, res, next) => {
   }
 }) 
 
-
-
-
 module.exports = router;
 
