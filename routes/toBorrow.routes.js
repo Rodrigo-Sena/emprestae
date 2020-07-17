@@ -43,7 +43,7 @@ router.post('/to-borrow/:id/update', async (req, res, next) => {
 
     try {
       const result = await toBorrow.updateOne({_id: id}, {$set: data})
-      console.log('AQUI!!!!!!!!!!');
+      // console.log('AQUI!!!!!!!!!!');
       res.redirect('profile')
     } catch (error) {
       console.log(error)

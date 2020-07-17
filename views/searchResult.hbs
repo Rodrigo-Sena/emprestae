@@ -1,6 +1,15 @@
-
+<div>
+  <h1 class="text-center mt-5">Resultado de Busca</h1>
 {{#each result}}
-  <h1>{{name}}</h1>
-  <p>{{description}}</p>
-  <span>{{owner.neighbourhood}}</span> 
+  <div class="card" style="width: 18rem;">
+  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">{{description}}</p>
+    <span class="card-text">{{owner.neighbourhood}}</span>
+    <a href="#" class="btn btn-primary">Visualizar</a>
+  </div>
+</div>
 {{/each}}
+</div>
+
