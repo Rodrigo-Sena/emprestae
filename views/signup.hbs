@@ -1,17 +1,27 @@
 <form action="/signup" method="POST">
-
+<div class="w-100 display-flex justify-content-center">
+  <div class="col-md-5 mb-5 mt-5 offset-md-3">
+    <input type="text" class="form-control" id="userName" name="userName" placeholder="Nome de Usuário" />
+  </div>
   
-    <input type="text" id="userName" name="userName" placeholder="Nome de Usuário" />
-
-    <input type="text" id="email" name="email" placeholder="exemplo@exemplo.com" />
-
-    <input type="text" id="phoneNumber" name="phoneNumber" placeholder="(99) 9999-9999" />
-
-    <input type="text" id="neighbourhood" name="neighbourhood" placeholder="Bairro" />
-
-    <input type="password" id="password" name="password" placeholder="Senha" />
-
-  <button type="submit">
+  <div class="col-md-5 mb-5 offset-md-3">
+    <input type="text" class="form-control mb-5" id="email" name="email" placeholder="exemplo@exemplo.com" />
+  </div>
+  
+  <div class="col-md-5 mb-5 offset-md-3">
+    <input type="text" class="form-control mb-5" id="phoneNumber" name="phoneNumber" placeholder="(99) 9999-9999" />
+  </div>
+  
+  <div class="col-md-5 mb-5 offset-md-3">
+    <input type="text" class="form-control mb-5" id="neighbourhood" name="neighbourhood" placeholder="Bairro" />
+  </div>
+  
+  <div class="col-md-5 mb-5 offset-md-3">
+    <input type="password" class="form-control mb-5" id="password" name="password" placeholder="Senha" />
+  </div>
+  
+  <button type="submit" class="btn btn-primary offset-md-5">
     Sign Up
   </button>
+</div>
 </form>

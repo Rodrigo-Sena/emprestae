@@ -2,11 +2,22 @@
   <h2>Resultado de Busca</h2>
 
 {{#each toBorrowList}}
-<h2>{{name}}</h2>
-<p><strong>Descrição:</strong>{{description}}</p>
-
 <form action="/details/{{_id}}" method="GET">
- <button type="submit">Visualizar</button>
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">{{description}}</p>
+    <span class="card-text">{{owner.neighbourhood}}</span>
+    <button type="submit" class="btn btn-primary">Visualizar</button>
+  </div>
+</div>
 </form>
-{{!-- <a href="/details/{{_id}}">Visualizar</a> --}}
 {{/each}}
+
+
+
+{{!-- <form action="/details/{{_id}}" method="GET">
+ <button type="submit">Visualizar</button>
+</form> --}}
+{{!-- <a href="/details/{{_id}}">Visualizar</a> --}}
