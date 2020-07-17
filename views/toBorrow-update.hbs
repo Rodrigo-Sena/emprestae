@@ -1,17 +1,20 @@
 {{#with result}}
 <form action="/to-borrow/{{_id}}/update" method="POST">
-<select class="form-control" id="toBorrowCategory" name="category">
+
+<h3 class="col-md-5 mt-5 mb-5 offset-md-4">Cadastro de Obj UPDATE</h3>
+
+<select class="form-control col-md-5 mb-5 offset-md-3" id="toBorrowCategory" name="category">
         <option value="ferramentas">Ferramentas</option>
         <option value="livros">Livros</option>
         <option value="jogos">Jogos</option>
     </select>
-  <div>
+  <div class="col-md-5 mb-5 offset-md-3">
     <input type="text" class="form-control" id="toBorrowName" name="name" value="{{name}}"/>
   </div>
-  <div>
+  <div class="col-md-5 mb-5 offset-md-3">
     <input type="text" class="form-control" id="toBorrowDescription" name="description"  value="{{description}}" />
   </div>
-  <button type="submit" class="btn btn-primary">
+  <button type="submit" class="btn btn-primary col-md-3 offset-md-4">
     Salvar
   </button>
 </form>
