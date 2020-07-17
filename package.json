@@ -6,7 +6,7 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node ./bin/www",
-    "dev": "nodemon ./bin/www"
+    "dev": "DEBUG=basicauth* nodemon ./bin/www"
   },
   "repository": {
     "type": "git",
@@ -34,5 +34,7 @@
     "path": "^0.12.7",
     "serve-favicon": "^2.5.0"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "debug": "^4.1.1"
+  }
 }
