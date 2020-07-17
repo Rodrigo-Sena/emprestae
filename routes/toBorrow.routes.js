@@ -11,13 +11,14 @@ router.get('/to-borrow', (req, res, next) => res.render('toBorrow-create'));
 
 router.post('/to-borrow/create', async (req, res, next) => {
     const data = req.body;
-    data.owner = req.session.currentUser;
+    data.owner = req.session.currentUser; // Quando um novo obj em uma nova seção com o mesmo usuáriio é criado, ele não gera o mesmo id Owner
     // console.log(`${data.owner} MMMMMMMMMMMMMMMMMMMMM`)
 
     try {
         const result = await toBorrow.create(data);
         console.log(result);
         res.redirect('/profile')
+        
     } catch (error) {
         throw new Error(error);
     }
@@ -44,7 +45,7 @@ router.post('/to-borrow/:id/update', async (req, res, next) => {
     try {
       const result = await toBorrow.updateOne({_id: id}, {$set: data})
       // console.log('AQUI!!!!!!!!!!');
-      res.redirect('profile')
+      res.redirect('/profile')
     } catch (error) {
       console.log(error)
     }
@@ -86,7 +87,7 @@ router.get("/to-borrow/:id/delete", async (req, res, next) => {
   try {
     const deletionResult = await toBorrow.deleteOne({ _id: id });
     console.log(deletionResult);
-    res.render("toBorrow-list");
+    res.redirect("/profile");
   } catch (err) {
     throw new Error(err);
   }
