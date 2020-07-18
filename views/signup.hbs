@@ -1,26 +1,38 @@
+
+
 <form action="/signup" method="POST">
-<div class="w-100 display-flex justify-content-center">
-  <div class="col-md-5 mb-5 mt-5 offset-md-3">
-    <input type="text" class="form-control" id="userName" name="userName" placeholder="Nome de Usuário" />
+<br>
+<div class="">
+  
+  <div class="col-md-4 mb-1  offset-md-4">
+    <h2>Crie sua conta</h2>
+    
+    <label>Nome de Usuário</label>
+    <input type="text" class="form-control" id="userName" name="userName" placeholder="Seu Nome" />
   </div>
   
-  <div class="col-md-5 mb-5 offset-md-3">
-    <input type="text" class="form-control mb-5" id="email" name="email" placeholder="exemplo@exemplo.com" />
+  <div class="col-md-4 mb-1 offset-md-4">
+    <label>Email</label>
+    <input type="text" class="form-control mb-1" id="email" name="email" placeholder="exemplo@exemplo.com" />
   </div>
   
-  <div class="col-md-5 mb-5 offset-md-3">
-    <input type="text" class="form-control mb-5" id="phoneNumber" name="phoneNumber" placeholder="(99) 9999-9999" />
+  <div class="col-md-4 mb-1 offset-md-4">
+    <label>Telefone</label>
+    <input type="text" class="form-control mb-1" id="phoneNumber" name="phoneNumber" placeholder="(99) 9999-9999" />
   </div>
   
-  <div class="col-md-5 mb-5 offset-md-3">
-    <input type="text" class="form-control mb-5" id="neighbourhood" name="neighbourhood" placeholder="Bairro" />
+  <div class="col-md-4 mb-1 offset-md-4">
+    <label>Bairro</label>
+    <input type="text" class="form-control mb-1" id="neighbourhood" name="neighbourhood" placeholder="Vila Legal" />
   </div>
   
-  <div class="col-md-5 mb-5 offset-md-3">
-    <input type="password" class="form-control mb-5" id="password" name="password" placeholder="Senha" />
+  <div class="col-md-4 mb-1 offset-md-4">
+     <label>Senha</label>
+    <input type="password" class="form-control mb-1" id="password" name="password" placeholder="******" />
+     <small id="emailmsg" class="form-text text-muted">Fique tranquilo. Seus dados estão seguros com a gente.</small>
   </div>
   
-  <button type="submit" class="btn btn-primary offset-md-5">
+  <button type="submit" class="btn btn-primary col-md-2 mb-2 mt-3 offset-md-5">
     Sign Up
   </button>
 </div>
