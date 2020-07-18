@@ -1,7 +1,7 @@
   <h2 class="col-md-5 mt-5 mb-5 offset-md-4" >Detalhes do Objeto:</h2>
 
 {{#with detailsResult}}
-<form action="/searchResult/{{_id}}/update" method="POST">
+<form action="/returnSearch" method="GET">
 <div class="card offset-5" style="width: 18rem;">
   <img src="" class="card-img-top" alt="...">
   <div class="card-body">
@@ -10,12 +10,12 @@
       <p class="card-text">{{owner.userName}}</p>
       <p class="card-text">{{owner.phoneNumber}}</p>
       <p class="card-text">{{owner.email}}</p>
-      <a href="/searchResult" class="btn btn-primary">Voltar</a>
+      {{!-- <a href="/searchResult" class="btn btn-primary">Voltar</a> --}}
+      <button type="submit" class="btn btn-primary col-md-4 offset-md-4">
+    Voltar
+  </button>
       {{!-- <a href="/details/{{id}}" class="btn btn-primary mt-3">Detalhes</a> --}}
   </div>
 </div>
-<a href="/searchResult" class="btn btn-primary">Voltar</a>
-<br>
-<button type="submit" class="btn btn-primary col-md-3 offset-md-4"> Voltar  com Update</button>
 </form>
 {{/with}}

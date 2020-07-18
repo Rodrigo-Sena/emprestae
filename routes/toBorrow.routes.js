@@ -100,16 +100,33 @@ router.get("/to-borrow/:id/delete", async (req, res, next) => {
 // router home
 router.get("/home", (req, res, next) => res.render('home')) 
 
+let input = "";
 // router search
 router.get("/searchResult", async (req, res, next) => {
+
+  const search = req.query.searchInput;
+  input = search;
+
   try {
-    const search = req.query.searchInput;
     const result = await toBorrow.find({'name': search}).populate('owner').exec()
     res.render('searchResult', { result });
   } catch (error) {
     console.log(error);
-  }
+  };
+  // console.log(`>>>>>>>>>>>>>>>>>>>>>>>>>>>${input}`);
 }) 
+
+router.get("/returnSearch", async (req, res, next) => {
+
+  try {
+    const result = await toBorrow.find({'name': input}).populate('owner').exec()
+    res.render('searchResult', { result });
+  } catch (error) {
+    console.log(error);
+  };
+  // console.log(`>>>>>>>>>>>>>>>>>>>>>>>>>>>${input}`);
+}) 
+
 
 // router.post('/searchResult/:id/update', async (req, res, next) => {
 //   const { id } = req.params
@@ -117,7 +134,7 @@ router.get("/searchResult", async (req, res, next) => {
 
 //   try {
 //     const result = await toBorrow.updateOne({_id: id}, {$set: data})
-//     res.render('searchResult', { result })
+//     // res.render('searchResult', { result })
     
 //     res.redirect('/searchResult')
 //     console.log('UPDATE SEARCH RESULT##################')
