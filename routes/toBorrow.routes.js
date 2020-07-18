@@ -11,8 +11,15 @@ router.get('/to-borrow', (req, res, next) => res.render('toBorrow-create'));
 
 router.post('/to-borrow/create', async (req, res, next) => {
     const data = req.body;
-    data.owner = req.session.currentUser; // Quando um novo obj em uma nova seção com o mesmo usuáriio é criado, ele não gera o mesmo id Owner
-    // console.log(`${data.owner} MMMMMMMMMMMMMMMMMMMMM`)
+    data.owner = req.session.currentUser; 
+    // let photo = "";
+
+    // if (req.file) {
+    //   imgPath = req.file.url;
+    // } else {
+    //   imgPath =
+    //     "";
+    // }
 
     try {
         const result = await toBorrow.create(data);
@@ -32,7 +39,6 @@ router.get('/to-borrow/:id/update', async(req, res, next) => {
     try {
         const result =  await toBorrow.findById(id)
         res.render('toBorrow-update', { result })
-        console.log('')
     } catch (error) {
         console.log(error)
       }
@@ -44,7 +50,6 @@ router.post('/to-borrow/:id/update', async (req, res, next) => {
 
     try {
       const result = await toBorrow.updateOne({_id: id}, {$set: data})
-      // console.log('AQUI!!!!!!!!!!');
       res.redirect('/profile')
     } catch (error) {
       console.log(error)
@@ -105,6 +110,24 @@ router.get("/searchResult", async (req, res, next) => {
     console.log(error);
   }
 }) 
+
+// router.post('/searchResult/:id/update', async (req, res, next) => {
+//   const { id } = req.params
+//   const data = req.body
+
+//   try {
+//     const result = await toBorrow.updateOne({_id: id}, {$set: data})
+//     res.render('searchResult', { result })
+    
+//     res.redirect('/searchResult')
+//     console.log('UPDATE SEARCH RESULT##################')
+    
+//   } catch (error) {
+//     console.log(error)
+//   }
+//  });
+
+
 
 module.exports = router;
 

@@ -1,18 +1,29 @@
+
+
 <h1 class="text-center mt-5">Resultados para {{#each result}} <strong>{{name}}</strong> {{/each}} </h1>
 
 <hr width=50% align=center>
 
+<div class="row ml-5">
 {{#each result}}
-<div class="card" style="width: 18rem;"></div>
-  <img class="card-img-top "src="..." class="card-img-top" alt="...">
+<div class="card col-6 col-sm-3 mb-3 mr-2" style="width: 18rem;">
+  <img class="card-img-top "src="{{photo}}" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{name}}</h5>
     <p class="card-text">{{description}}</p>
     <span class="card-text">{{owner.neighbourhood}}</span>
-    <a href="/details/{{id}}" class="btn btn-primary">Visualizar</a>
+    <br>
+    <a href="/details/{{id}}" class="btn btn-primary mt-3">Detalhes</a>
   </div>
 </div>
 {{/each}}
+</div>
+
+
+
+
+
+
 {{!-- 
 //comparação 
 
