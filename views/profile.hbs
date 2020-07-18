@@ -1,15 +1,64 @@
-  <h2>Coisas a emprestar</h2>
+{{!--  Partial de Profile --}}
+
+{{!-- {{> profilePartials}} --}}
+
+{{!-- Body de Profile --}}
+<h2 class="mt-5 mb-5">Coisas a emprestar</h2>
+
+{{!-- <div class="d-flex align-content-between flex-wrap float-md-left align-middle ml-5"> --}}
+  <div class="row ml-5">
+  {{#each toBorrowList}}
+  <div class="card col-6 col-sm-3 mb-3 mr-2" style="width: 18rem;">
+      <img class="card-img-top" src="{{photo}}" alt="Foto do Objeto">
+    <div class="card-body">
+      <h5 class="card-title">{{name}}</h5>
+      <p class="card-text">{{description}}</p>
+      <span class="card-text">{{owner.neighbourhood}}</span>
+        <br>
+        <a class="btn btn-primary mt-3" href="/to-borrow/{{_id}}/update">Editar</a>
+        <a class="btn btn-primary mt-3" href="/to-borrow/{{_id}}/delete">Delete</a>
+    </div>
+  </div>
+    {{/each}}
+    <div class="w-100 d-none d-md-block"></div>
+  </div>
+{{!-- </div> --}}
+
+<footer>
+  <a class="btn btn-primary mt-5 mb-5 offset-5" href="/to-borrow">Novo Objeto</a>
+</footer>
 
 
 
-<div>
-{{#each toBorrowList}}
-<h2>{{name}}</h2>
-<p><strong>Descrição:</strong>{{description}}</p>
-<p><strong>Localização:</strong> {{owner.neighbourhood}} </p>
-<a href="/to-borrow/{{_id}}/update">Editar</a>
-<a href="/to-borrow/{{_id}}/delete">Delete</a>
-{{/each}}
+{{!-- <div class="row">
+  <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+  <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+  <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+  <!-- Force next columns to break to new line at md breakpoint and up -->
+  <div class="w-100 d-none d-md-block"></div>
 
-</div>
+  <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+  <div class="col-6 col-sm-4">.col-6 .col-sm-4</div>
+</div> --}}
 
+
+
+{{!-- <form action="/to-borrow/create" method="POST">
+
+<button type="submit" class="btn btn-primary col-md-2 mb-2 mt-3 offset-md-5">
+    Novo Objeto
+  </button>
+
+</form>
+
+<a class="btn btn-primary mt-3" href="/to-borrow/create">Novo Objeto</a> --}}
+
+{{!-- 
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">{{description}}</p>
+    <span class="card-text">{{owner.neighbourhood}}</span>
+    <button type="submit" class="btn btn-primary">Visualizar</button>
+  </div> --}}

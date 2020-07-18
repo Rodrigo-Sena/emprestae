@@ -128,8 +128,8 @@ router.get('/profile', async (req, res, next) => {
         if (req.session.currentUser) {  
             const ownerId = req.session.currentUser._id
             const result = await toBorrow.find({'owner': ownerId}).populate('owner').exec()
-            // console.log(`${result} <<<<<<<<<<<<<<<<<<<<<  RESULT `)
-        res.render('profile', { toBorrowList: result })
+        res.render('profile', { toBorrowList: result });
+        
           } else {
               res.redirect('/login')
           }
@@ -139,5 +139,6 @@ router.get('/profile', async (req, res, next) => {
     }
     
 });
+
 
 module.exports = router;
