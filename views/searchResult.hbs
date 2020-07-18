@@ -1,8 +1,10 @@
-<h1 class="text-center mt-5">Resultado de Bus SEARCH RESULT</h1>
+<h1 class="text-center mt-5">Resultados para {{#each result}} <strong>{{name}}</strong> {{/each}} </h1>
+
+<hr width=50% align=center>
 
 {{#each result}}
-  <div class="card" style="width: 18rem;">
-  <img class="card-img-top" src=".../100px180/" alt="Card image cap">
+<div class="card" style="width: 18rem;"></div>
+  <img class="card-img-top "src="..." class="card-img-top" alt="...">
   <div class="card-body">
     <h5 class="card-title">{{name}}</h5>
     <p class="card-text">{{description}}</p>
@@ -11,3 +13,19 @@
   </div>
 </div>
 {{/each}}
+{{!-- 
+//comparação 
+
+{{#with detailsResult}}
+<div class="card" style="width: 18rem;">
+  <img class="card-img-top "src="..." class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+      <p class="card-text">{{description}}</p>
+      <p class="card-text">{{owner.userName}}</p>
+      <p class="card-text">{{owner.phoneNumber}}</p>
+      <p class="card-text">{{owner.email}}</p>
+      <a href="#" class="btn btn-primary">Voltar</a>
+  </div>
+</div>
+{{/with}} --}}

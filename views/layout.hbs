@@ -22,8 +22,8 @@
     <span class="navbar-toggler-icon"></span>
   </button>
   
-  <form class="form-inline my-2 my-lg-0">
-    <input class="form-control mr-auto" type="search" placeholder="preciso de..." aria-label="Search">
+  <form action="/searchResult" method="GET" class="form-inline my-2 my-lg-0">
+    <input id="searchInput" name="searchInput" class="form-control mr-auto" type="text" placeholder="preciso de..." aria-label="Search">
     <button class="btn btn-light my-2 my-sm-0" type="submit">Buscar</button>
   </form>
 
@@ -38,6 +38,7 @@
       <li class="nav-item">
         <a class="nav-link" href="/login">Login</a>
       </li>
+      
   </div>
 
 </nav>
