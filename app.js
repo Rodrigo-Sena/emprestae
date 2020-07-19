@@ -36,6 +36,11 @@ app.set('view engine', 'hbs');
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 
+
+// hbs.registerPartials(path.join(__dirname, "views", "partials"))
+// app.get("/players", (req, res, next) => res.render("players"))
+
+
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
 

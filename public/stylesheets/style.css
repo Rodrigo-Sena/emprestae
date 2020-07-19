@@ -10,37 +10,26 @@
  
 #body {
     background-color:#aec2ff;
-    /* background-image: url('images/skyline.png');
-    background-repeat: no-repeat;
-    background-attachment: fixed;
-    background-size: cover; */
 }
 
 .home {
     
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    
-
+    justify-content: center;    
 }
 
-h2{
+h2 {
     text-align: center;
 }
 
 .home-search {
-    
     display: flex;
     flex-direction: column;
- 
     margin-left: auto;
     margin-right: auto;
-  
-    
     margin-top: 20px;
     margin-bottom: 20px;
-   
 }
 
 .logo-home{
@@ -63,4 +52,31 @@ h2{
 
 .card{
     width: 75%;
+}
+
+#frase {
+    display: flex;
+    justify-content: center;
+}
+
+#profile-page {
+    display: flex
+}
+
+#profile{
+    display: flex;
+    flex-direction: column;
+    border-right: #9CAEE5;
+    border-style: solid;
+    border-width: 2px;
+    border-bottom: none;
+    border-left: none;
+    border-top: none;
+    padding: 30px;
+    
+}
+
+#meus-anuncios{
+    display: flex;
+    justify-content: space-around;
 }

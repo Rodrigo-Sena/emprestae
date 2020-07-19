@@ -120,25 +120,47 @@ router.post('/logout', (req, res) => {
   req.session.destroy();
   res.redirect('/');
 });
-// router.get('/userProfile', (req, res) => res.render('users/user-profile'));
 
-router.get('/profile', async (req, res, next) => { 
-    
+/////////////////////// READ //////////////////////////////////////////
+
+
+//////// PERFIL DO USUÁRIO
+
+  router.get('/profile', async (req, res, next) => { 
     try {
-        if (req.session.currentUser) {  
-            const ownerId = req.session.currentUser._id
-            const result = await toBorrow.find({'owner': ownerId}).populate('owner').exec()
-        res.render('profile', { toBorrowList: result });
-        
+      if (req.session.currentUser) {
+        const userId = req.session.currentUser._id
+        const result = await User.find({"_id": userId})
+        console.log(`console de PROFILE ${result}`)
+        res.render('profile', { toBorrowList: result});
+   
           } else {
               res.redirect('/login')
           }
         
     } catch (error) {
         console.log(error)
-    }
+      }
+      
+  });
+
+///////// OBJETOS DO USUÁRIO
+
+  router.get('/user-borrows', async (req, res, next) => { 
     
-});
+    try {
+      if (req.session.currentUser) {
+        const ownerId = req.session.currentUser._id
+        const result = await toBorrow.find({"owner": ownerId}).populate('owner').exec()
+        res.render('user-borrows', { toBorrowList: result});
+          } else {
+              res.redirect('/login')
+          }
+    } catch (error) {
+        console.log(error)
+      }
+      
+  });
 
 
 module.exports = router;

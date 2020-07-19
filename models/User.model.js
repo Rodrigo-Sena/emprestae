@@ -32,9 +32,9 @@ const userSchema = new Schema(
     
 
   },
-  {
-    timestamps: true
-  }
+  // {
+  //   timestamps: true
+  // }
 
   
 );
