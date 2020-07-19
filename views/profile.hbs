@@ -2,21 +2,29 @@
     <div>
       <h2>Perfil</h2>
     </div>
+    <hr>
       
-    <div>
-      <img id="profile-picture"src="" alt="">
-    </div>
+<div id="profile">
 
-    {{#each toBorrowList}}
-
+   {{#each toBorrowList}}
 
     <div>
       
-      <h5>Nome:{{userName}} </h5>
-      <p>Telefone:{{phoneNumber}} </p>
+      <h5>Nome: {{userName}} </h5>
+      <p>E-mail: {{phoneNumber}} </p>
+      <p>Telefone: {{phoneNumber}} </p>
       <p>Bairro: {{neighbourhood}} </p>
       <a class="btn btn-primary" href="/to-borrow">Criar anúncio</a>
       <a class="btn btn-primary" href="/user-borrows">Meus Anúncios</a>
 
     </div>
     {{/each}}
+    </div>
+<img id="skyline"src="images/skyline.png" alt="">
+</div>
+
+
+
+</div>   
+
+   
