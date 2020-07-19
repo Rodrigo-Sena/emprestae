@@ -1,4 +1,3 @@
-  <br>
     <div>
       <h2>Perfil</h2>
     </div>
@@ -7,16 +6,15 @@
       <img id="profile-picture"src="" alt="">
     </div>
 
-    {{#each toBorrowList}}
-
-
+    {{#with toBorrowList}}
     <div>
-      <input type="text" value="{{owner.userName}}"/>
-      <h5>user e-mail:{{userName}} </h5>
+      <input type="text" value="{{name}}"/>
+      <h5>user e-mail:{{name}} </5>
       <p>user phone:{{phoneNumber}} </p>
       <p>user neighbourhood: </p>
       <a class="btn btn-primary" href="/to-borrow">Criar anúncio</a>
-      <a class="btn btn-primary" href="/user-borrows">Meus Anúncios</a>
-
     </div>
-    {{/each}}
+    {{/with}}
+
+
+ 
