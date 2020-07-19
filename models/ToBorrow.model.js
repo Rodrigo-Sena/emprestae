@@ -19,7 +19,7 @@ const toBorrowSchema = new Schema(
       type: String,
       trim: true
     },
-    photo: {
+    imageUrl: {
         type: String,
       },
     loanCondition: {
