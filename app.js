@@ -9,17 +9,17 @@ const mongoose = require('mongoose');
 const logger = require('morgan');
 const path = require('path');
 
+const app = express();
+
 const app_name = require('./package.json').name;
 const debug = process.env.ENV ? require('debug')(
   `${app_name}:${path.basename(__filename).split('.')[0]}`
 ) : null;
 
-const app = express();
+
 
 // require database configuration
 require('./configs/db.config');
-
-
 require('./configs/session.config')(app);
 
 
@@ -44,11 +44,15 @@ app.use(favicon(path.join(__dirname, 'public', 'images', 'favicon.ico')));
 // default value for title local
 app.locals.title = 'Express - Generated with IronGenerator';
 
-const toBorrow = require('./routes/toBorrow.routes');
-app.use('/', toBorrow);
+app.use("/", require("./routes/toBorrow.routes"));
+app.use("/", require("./routes/user.routes"));
 
-const user = require('./routes/user.routes');
-app.use('/', user);
+
+// const toBorrow = require('./routes/toBorrow.routes');
+// app.use('/', toBorrow);
+
+// const user = require('./routes/user.routes');
+// app.use('/', user);
 
 module.exports = app;
 

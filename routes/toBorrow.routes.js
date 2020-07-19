@@ -4,22 +4,35 @@ const toBorrow = require ('../models/ToBorrow.model')
 const User = require('../models/User.model');
 const { Router } = require('express');
 
+const fileUploader = require('../configs/cloudinary.config');
+const uploadCloud = require('../configs/cloudinary.config');
+
 
 //######################## CREATE ########################
+
+
 
 router.get('/to-borrow', (req, res, next) => res.render('toBorrow-create'));
 
 router.post('/to-borrow/create', async (req, res, next) => {
     const data = req.body;
     data.owner = req.session.currentUser; 
-    // let photo = "";
 
-    // if (req.file) {
-    //   imgPath = req.file.url;
-    // } else {
-    //   imgPath =
-    //     "";
-    // }
+    // let imgPath = “”;
+    //     if (req.file) {
+    //       imgPath = req.file.url;
+    //     } else {
+    //       imgPath = “”;
+    //     };
+       
+    // toBorrow.create({ data, imageUrl: req.file.url })
+    // .then((data) => {
+    //   console.log(data);
+    //   res.redirect("/to-borrow");
+    // })
+    // .catch((error) =>
+    //   console.log(`Error while creating a object: ${error}`)
+    // );
 
     try {
         const result = await toBorrow.create(data);
