@@ -1,12 +1,13 @@
 
 
-<h1 class="text-center mt-5">Resultados para {{#each result}} {{name}} {{/each}} </h1>
+<h1 class="text-center mt-5">Resultados para Pesquisa </h1>
+<div>
+<a class="btn btn-primary offset-10" href="/user-borrows">Meus Anúncios</a>
+</div>
+<hr width=100% align=center>
 
-<hr>
-
-<div class="row ml-5"></div>
+<div class="row ml-5">
 {{#each result}}
-
 <div class="card col-6 col-sm-3 mb-3 mr-2" style="width: 18rem;">
   <img class="card-img-top "src="{{photo}}" alt="Card image cap">
   <div class="card-body">
@@ -23,7 +24,9 @@
 
 
 
+{{!-- <h1 class="text-center mt-5">Resultados para {{#each result}} {{name}} {{/each}} </h1> --}}
 
+{
 
 {{!-- 
 //comparação 
