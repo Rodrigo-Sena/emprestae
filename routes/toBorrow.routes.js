@@ -52,7 +52,7 @@ router.get('/to-borrow/:id/update', async(req, res, next) => {
     try {
         const result =  await toBorrow.findById(id)
         res.render('toBorrow-update', { result })
-        console.log(Array.isArray(result))
+        
     } catch (error) {
         console.log(error)
       }
