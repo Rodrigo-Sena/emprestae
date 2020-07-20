@@ -1,26 +1,37 @@
- <br>
- <h2></h2> 
+ 
+ <h2 class="mt-5 mb-5">Anúncios</h2>
  
  <hr>
-
-
+ 
 {{#each toBorrowList}}
 <form action="/details/{{_id}}" method="GET">
-<div class="card" style="width: 18rem">
-  <img class="card-img-top" src="{{photo}}" alt="Card image cap">
+<div class=" ml-5 bl-5 pl-5">
+<div class="card col-6 col-sm-3 mb-3 mr-2" style="width: 18rem">
+  <img class="card-img-top" src="../public/images/placeholderCard.svg" alt="Card image cap">
   <div class="card-body">
     <h5 class="card-title">{{name}}</h5>
     <p class="card-text">{{description}}</p>
     <span class="card-text">{{owner.neighbourhood}}</span>
-    <button type="submit" class="btn btn-primary">Visualizar</button>
+    <br>
+    <button type="submit" class="btn btn-primary mt-2">Visualizar</button>
   </div>
+</div>
 </div>
 </form>
 {{/each}}
 
 
-
-{{!-- <form action="/details/{{_id}}" method="GET">
- <button type="submit">Visualizar</button>
-</form> --}}
-{{!-- <a href="/details/{{_id}}">Visualizar</a> --}}
+{{!-- <div class="row ml-5">
+{{#each result}}
+<div class="card col-6 col-sm-3 mb-3 mr-2" style="width: 18rem;">
+  <img class="card-img-top "src="{{photo}}" alt="Card image cap">
+  <div class="card-body">
+    <h5 class="card-title">{{name}}</h5>
+    <p class="card-text">{{description}}</p>
+    <span class="card-text">{{owner.neighbourhood}}</span>
+    <br>
+    <a href="/details/{{id}}" class="btn btn-primary mt-3">Detalhes</a>
+  </div>
+</div>
+{{/each}}
+</div> --}}

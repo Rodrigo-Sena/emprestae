@@ -1,11 +1,49 @@
 
 {{#with result}}
 
-<div id="update-form">
+<div id="create-form">
+
   <form action="/to-borrow/{{_id}}/update" method="POST">
 
-  <h3 class="col-md-5 mt-3 mb-2 offset-md-4">Alterar anúncio</h3>
-  <hr>
+<h3 class="col-md-5 mt-5 mb-5 offset-md-4">O que você pode emprestar?</h3>
+
+    <select class="form-control col-md-5 mb-5 offset-md-3" id="toBorrowCategory" name="category">
+        <option value=" selected disable">Categoria</option>
+        <option value="ferramentas">Ferramentas</option>
+        <option value="livros">Livros</option>
+        <option value="jogos">Jogos</option>
+    </select>
+
+  
+  <div class="col-md-5 mb-5 offset-md-3">
+    <input type="text" class="form-control" id="toBorrowName" name="name" placeholder="Nome" value="{{name}}"/>
+  </div>
+  <div class="col-md-5 mb-5 offset-md-3">
+    <input type="text" class="form-control" id="toBorrowDescription" name="description" placeholder="Descrição" value="{{description}}" />
+  </div>
+  <div class="col-md-5 mb-5 offset-md-3">
+    <p>Imagem: <input type="file" id="image-input" name="image" placeholder="Imagem" /> </p>
+    
+  </div>
+  <button type="submit" class="btn btn-primary col-md-3 offset-md-4">
+    Salvar
+  </button>
+</form>
+</div>
+
+{{/with }}
+
+<div class="mt-5 pt-5 bt-5">
+<img id="skyline"src="images/skyline.png" alt="">
+</div>
+
+
+{{!-- {{#with result}} --}}
+
+{{!-- <form action="/to-borrow/{{_id}}/update" method="POST"> --}}
+
+{{!-- <h3 class="col-md-5 mt-5 mb-5 offset-md-4">Cadastro de Obj UPDATE</h3>
+
 
   <select class="form-control col-md-5 mb-5 offset-md-3" id="toBorrowCategory" name="category">
           <option value="" selected disabled>Categoria</option>
@@ -14,20 +52,19 @@
           <option value="jogos">Jogos</option>
       </select>
 
-    
-    <div class="col-md-5 mb-5 offset-md-3">
-      <input type="text" class="form-control" id="toBorrowName" name="name" value="{{name}}"/>
-    </div>
-    <div class="col-md-5 mb-5 offset-md-3">
-      <input type="text" class="form-control" id="toBorrowDescription" name="description"  value="{{description}}" />
-    </div>
-    <div class="col-md-5 mb-5 offset-md-3">
+
+  <div class="col-md-5 mb-5 offset-md-3">
     <input type="file" id="toBorrowImg" name="photo" value="{{photo}}"/>
-    </div>
-    <button type="submit" class="btn btn-primary col-md-3 offset-md-4">
-      Salvar
-    </button>
-  </form>
-</div>
-{{/with }}
+  </div>
+  <div class="col-md-5 mb-5 offset-md-3">
+    <input type="text" class="form-control" id="toBorrowName" name="name" value="{{name}}"/>
+  </div>
+  <div class="col-md-5 mb-5 offset-md-3">
+    <input type="text" class="form-control" id="toBorrowDescription" name="description"  value="{{description}}" />
+  </div>
+  <button type="submit" class="btn btn-primary col-md-3 offset-md-4">
+    Salvar
+  </button>
+</form>
+{{/with }} --}}
 

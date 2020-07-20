@@ -58,7 +58,8 @@ h2 {
 }
 
 .card{
-    width: 75%;
+    /* width: 50%; */
+    /* background-color: #ece0d3; */
 }
 
 #frase {
@@ -73,12 +74,16 @@ h2 {
 #profile{
     display: flex;
     justify-content: center;
-   background-color:  #9CAEE5;
+    background-color:  #9CAEE5;
     padding: 30px;
     
 }
 
-#meus-anuncios{
+/* #meus-anuncios{
     display: flex;
     justify-content: space-around;
-}
+} */
+
+/* .rowUserBorrows{
+    margin-left: 180rem;
+} */

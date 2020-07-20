@@ -37,7 +37,7 @@ router.post('/to-borrow/create', async (req, res, next) => {
     try {
         const result = await toBorrow.create(data);
         console.log(result);
-        res.redirect('/profile')
+        res.redirect('/user-borrows')
         
     } catch (error) {
         throw new Error(error);
@@ -52,7 +52,6 @@ router.get('/to-borrow/:id/update', async(req, res, next) => {
     try {
         const result =  await toBorrow.findById(id)
         res.render('toBorrow-update', { result })
-        
     } catch (error) {
         console.log(error)
       }
@@ -64,11 +63,11 @@ router.post('/to-borrow/:id/update', async (req, res, next) => {
 
     try {
       const result = await toBorrow.updateOne({_id: id}, {$set: data})
-      res.redirect('/profile')
+      res.redirect('/user-borrows')
     } catch (error) {
       console.log(error)
     }
-   });
+   }); 
 
 
 //######################## READ ########################
@@ -104,7 +103,7 @@ router.get("/to-borrow/:id/delete", async (req, res, next) => {
   try {
     const deletionResult = await toBorrow.deleteOne({ _id: id });
     console.log(deletionResult);
-    res.redirect("/profile");
+    res.redirect("/user-borrows");
   } catch (err) {
     throw new Error(err);
   }
