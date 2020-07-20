@@ -53,6 +53,9 @@ h2 {
 #create-form{
     margin-bottom: -180px;
 }
+#update-form {
+    margin-bottom: -180px;
+}
 
 .card{
     /* width: 50%; */
